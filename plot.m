@@ -45,8 +45,6 @@ ey = [y(t3) == ry(1), y(t4) == ry(2), yd(t3) == uy(1), yd(t4) == uy(t2)];
 sy = solve(ey, [b3 b2 b1 b0]);
 dy(t) = subs(y, [b3 b2 b1 b0], [sy.b3 sy.b2 sy.b1 sy.b0]);
 
-    fplot(dx, dy, [t3 t4])
-
-
+    fplot(dx, dy, [t3 t4]);
 
 
