@@ -34,7 +34,18 @@ uy = [vy(2), 5];
 plot(rx, ry, '*');
 quiver(rx(2), ry(2), ux(2), uy(2));
 
-    
+t3 = -1;
+t4 = 1;
+
+ex = [x(t3) == rx(1), x(t4) == rx(2), xd(t3) == ux(1), xd(t4) == ux(2)];
+sx = solve(ex, [a3 a2 a1 a0]);
+dx(t) = subs(x, [a3 a2 a1 a0] , [sx.a3, sx.a2, sx.a1, sx.a0] );
+
+ey = [y(t3) == ry(1), y(t4) == ry(2), yd(t3) == uy(1), yd(t4) == uy(t2)];
+sy = solve(ey, [b3 b2 b1 b0]);
+dy(t) = subs(y, [b3 b2 b1 b0], [sy.b3 sy.b2 sy.b1 sy.b0]);
+
+    fplot(dx, dy, [t3 t4])
 
 
 
