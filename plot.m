@@ -20,7 +20,7 @@ cx(t) = subs(x, [a3 a2 a1 a0] , [sx.a3, sx.a2, sx.a1, sx.a0] );
 syms b3 b2 b1 b0
 y(t) = b3*t^3 + b2*t^2 + b1*t + b0;
 yd(t) = diff(y,t);
-ey = [y(t1) == py(1), y(t2) == py(2), yd(t1) == vy(1), yd(t2) == vy(t2)];
+ey = [y(t1) == py(1), y(t2) == py(2), yd(t1) == vy(1), yd(t2) == vy(2)];
 sy = solve(ey, [b3 b2 b1 b0]);
 cy(t) = subs(y, [b3 b2 b1 b0], [sy.b3 sy.b2 sy.b1 sy.b0]);
 fplot(cx, cy, [t1 t2])
